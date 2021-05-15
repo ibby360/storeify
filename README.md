@@ -1,1 +1,1 @@
-# Django Eccomerce Web Application
+# Django Ecommerce Web Application
