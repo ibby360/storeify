@@ -85,7 +85,7 @@
                   </div>
                   <div class="card-body">
                     <p>{{product.category}}</p>
-                    <h4 class="card-product__title"><a href="#">{{product.product_name}}</a></h4>
+                    <h4 class="card-product__title"><a href="{{ product.get_absolute_url }}">{{product.product_name}}</a></h4>
                     <p class="card-product__price">${{product.price}}</p>
                   </div>
                 </div>
