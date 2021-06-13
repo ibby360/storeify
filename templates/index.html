@@ -32,7 +32,7 @@
       {% for item in featured %}
         <div class="hero-carousel__slide">
           <img src="{{item.thumbnail.url}}" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
+          <a href="{{item.get_absolute_url}}" class="hero-carousel__slideOverlay">
             <h3>{{item.product_name}}</h3>
             <p>{{item.category}}</p>
           </a>
@@ -63,7 +63,7 @@
               </div>
               <div class="card-body">
                 <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">{{item.product_name}}</a></h4>
+                <h4 class="card-product__title"><a href="{{ item.get_absolute_url }}">{{item.product_name}}</a></h4>
                 <p class="card-product__price">${{item.price}}</p>
               </div>
             </div>
@@ -112,7 +112,7 @@
             </div>
             <div class="card-body">
               <p>Accessories</p>
-              <h4 class="card-product__title"><a href="single-product.html">{{product.product_name}}</a></h4>
+              <h4 class="card-product__title"><a href="{{product.get_absolute_url}}">{{product.product_name}}</a></h4>
               <p class="card-product__price">${{product.price}}</p>
             </div>
           </div>
