@@ -79,7 +79,7 @@
                     <img class="card-img" src="{{product.thumbnail.url}}" alt="">
                     <ul class="card-product__imgOverlay">
                       <li><button><i class="ti-search"></i></button></li>
-                      <li><button><i class="ti-shopping-cart"></i></button></li>
+                      <li><button><a href="{% url 'cart:add_cart' product.id %}"><i class="ti-shopping-cart"></i></a></button></li>
                       <li><button><i class="ti-heart"></i></button></li>
                     </ul>
                   </div>
