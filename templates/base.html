@@ -44,13 +44,21 @@
             </ul>
 
             <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><a href="{% url 'cart:cart' %}"><i class="ti-shopping-cart"></i></a><span class="nav-shop__circle">{{cart_count}}</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="#">Log In</a></li>
+				<li class="nav-item"><button id="searchIcon"><i class="ti-search"></i></button></li>
+            	<li class="nav-item"><button><a href="{% url 'cart:cart' %}"><i class="ti-shopping-cart"></i></a><span class="nav-shop__circle">{{cart_count}}</span></button> </li>
+            	<li class="nav-item"><a class="button button-header" href="#">Log In</a></li>
             </ul>
           </div>
         </div>
       </nav>
+		<!-- Search Form -->
+	  	<div class="search-form">
+            <form action="{% url 'shop:search' %}" method="get">
+                <input type="search" name="q" id="search" placeholder="Type keywords &amp; press enter..." required>
+                <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
     </div>
   </header>
 	<!--================ End Header Menu Area =================-->
@@ -158,5 +166,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{% static 'vendors/jquery.ajaxchimp.min.js' %%}"></script>
   <script src="{% static 'vendors/mail-script.js' %%}"></script>
   <script src="{% static 'js/main.js' %%}"></script>
+  <script src="{% static 'js/active.js' %%}"></script>
 </body>
 </html>
