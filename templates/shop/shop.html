@@ -7,6 +7,9 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
+        {% if 'shop:search' in request.path %}
+					<h1>Search Results</h1>
+        {% else %}
 					<h1>Shop Category</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
@@ -14,6 +17,7 @@
               <li class="breadcrumb-item active" aria-current="page">Shop Category</li>
             </ol>
           </nav>
+        {% endif %}
 				</div>
 			</div>
     </div>
