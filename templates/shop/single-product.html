@@ -53,18 +53,25 @@
 						<p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
 							something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
 							during the winter.</p>
-						<div class="product_count">
-              <label for="qty">Quantity:</label>
-              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-							 class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
-							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-               class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
-			   				{% if product.stock <= 0 %}
-								<p class="text-danger">Out of Stock</p>
-							{% else %}
-								<a class="button primary-btn" href="#">Add to Cart</a>               
-							{% endif %}
+						<div class="row mt-3">
+							<div class="product_count col-sm-6">
+								<label for="qty">Quantity:</label>
+								<input type="text" name="qty" id="sst" maxlength="12" value="" title="Quantity:"
+								class="input-text qty">
+								<button class="increase items-count" type="button"><a href="" class="qnty-link"><i class="lnr lnr-chevron-up"></i></a></button>
+								<button class="reduced items-count" type="button"><a href="" class="qnty-link"><i class="lnr lnr-chevron-down"></i></a></button>
+							</div>
+							<div class="col-sm-6">
+								{% if product.stock <= 0 %}
+									   <p class="text-danger">Out of Stock</p>
+									{% else %}
+										{% if in_cart %}
+									   		<a class="button btn-success" href="#">In Cart Already</a>
+										{% else %}
+									   	<a class="button primary-btn" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+										{% endif %}
+								{% endif %}
+							</div>
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
