@@ -46,7 +46,14 @@
             <ul class="nav-shop">
 				<li class="nav-item"><button id="searchIcon"><i class="ti-search"></i></button></li>
             	<li class="nav-item"><button><a href="{% url 'cart:cart' %}"><i class="ti-shopping-cart"></i></a><span class="nav-shop__circle">{{cart_count}}</span></button> </li>
-            	<li class="nav-item"><a class="button button-header" href="#">Log In</a></li>
+				
+				{% if user.is_authenticated %}
+					<li class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log Out</a></li>
+				{% else %}
+					<li class="nav-item"><a class="button button-header" href="{% url 'login' %}">Log In</a></li>
+				{% endif %}
+					
+            	
             </ul>
           </div>
         </div>
