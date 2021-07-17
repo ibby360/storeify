@@ -84,6 +84,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Storeify.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -150,3 +152,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# SMTP configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'ibbypapi@gmail.com'
+EMAIL_HOST_PASSWORD = 'ibby2020'
+EMAIL_USE_TLS = True
