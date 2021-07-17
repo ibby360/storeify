@@ -39,7 +39,10 @@
 						<form class="row login_form" action="{% url 'register' %}" id="register_form"  method='POST'>
 							{% csrf_token %}
 							<div class="col-md-12 form-group">
-								{{ form.username }}
+								{{ form.first_name }}
+							</div>
+							<div class="col-md-12 form-group">
+								{{ form.last_name }}
 							</div>
 							<div class="col-md-12 form-group">
 								{{ form.email }}
@@ -52,12 +55,6 @@
               				</div>
               				<div class="col-md-12 form-group">
 							  	{{ form.confirm_password }}
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="creat_account">
-									<input type="checkbox" id="f-option2" name="selector">
-									<label for="f-option2">Keep me logged in</label>
-								</div>
 							</div>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="button button-register w-100">Register</button>

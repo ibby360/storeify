@@ -22,12 +22,13 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
             phone_number = form.cleaned_data['phone_number']
             email = form.cleaned_data['email']
+            username = email.split("@")[0]
             password = form.cleaned_data['password']
-            user = Account.objects.create_user(
-                username=username, email=email, password=password)
+            user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
             user.save()
 
@@ -43,6 +44,7 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
+            return redirect('/accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
 
@@ -54,16 +56,16 @@ def register(request):
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
 
-        user = auth.authenticate(username=username, password=password)
+        user = auth.authenticate(email=email, password=password)
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect('index')
         else:
-            # messages.error('Invalid login credentials!')
+            messages.error(request, 'Invalid login credentials!')
             return redirect('login')
     return render(request, 'accounts/login.html')
 
