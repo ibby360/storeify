@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
   
+	{% if request.GET.command == 'verification' %}
+
+	<div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1024px; margin-top:100px; margin-bottom:100px;">
+	Thank you for registering with us. We have sent you a verification email to your email address {{ request.GET.email }}'
+	<br><br>
+	Already verified? <a href="{% url 'login' %}">Login</a>
+	</div>
+	{% else %}
   <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
@@ -39,15 +47,15 @@
 						<form class="row login_form" action="{% url 'login' %}" method="POST" id="contactForm" >
 							{% csrf_token %}
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="username" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" required>
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required>
 							</div>
 							<div class="col-md-12 form-group">
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required>
 							</div>
 							<div class="col-md-12 form-group">
 								<div class="creat_account">
-									<input type="checkbox" id="f-option2" name="selector">
-									<label for="f-option2">Keep me logged in</label>
+									<input type="checkbox" id="showPswd" name="selector" onclick="myFunction()">
+									<label for="f-option2">Show Password</label>
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
@@ -61,5 +69,16 @@
 		</div>
 	</section>
 	<!--================End Login Box Area =================-->
+	{% endif %}
 
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("password");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+		}
+	</script>
 {% endblock content %}
