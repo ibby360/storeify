@@ -1,0 +1,8 @@
+{% autoescape off %}
+You're on your way!
+Let's confirm your email address.
+By clicking on the following link, you are confirming your email address.
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+If you think this is not you, please ignore this email.
+{% endautoescape %}
