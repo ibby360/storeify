@@ -13,6 +13,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import environ
+
+#################################
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+#################################
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -156,6 +163,6 @@ MESSAGE_TAGS = {
 # SMTP configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ibbypapi@gmail.com'
-EMAIL_HOST_PASSWORD = 'ibby2020'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
