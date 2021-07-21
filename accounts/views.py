@@ -34,7 +34,7 @@ def register(request):
 
             # USER ACTIVATION
             current_site = get_current_site(request)
-            mail_subject = 'Welcome to VirtTips! Confirm Your Email.'
+            mail_subject = 'Welcome to Storeify! Confirm Your Email.'
             message = render_to_string('accounts/account_verification_email.html', {
                 'user': user,
                 'domain': current_site,
