@@ -73,6 +73,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+    
 
 def activate(request, uidb64, token):
     try:
