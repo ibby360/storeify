@@ -94,6 +94,7 @@
 
     <!-- ================ Best Selling item  carousel ================= --> 
     <section class="section-margin calc-60px">
+    {% if top_sellers %}
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular Item in the market</p>
@@ -119,6 +120,7 @@
         {% endfor %}
         </div>
       </div>
+    {% endif %}
     </section>
     <!-- ================ Best Selling item  carousel end ================= --> 
 
@@ -126,7 +128,6 @@
     <section class="blog">
       <div class="container">
         <div class="section-intro pb-60px">
-          <p>Popular Item in the market</p>
           <h2>Latest <span class="section-intro__style">News</span></h2>
         </div>
 
