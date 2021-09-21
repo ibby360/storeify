@@ -44,6 +44,7 @@
 
     <!-- ================ trending product section start ================= -->  
     <section class="section-margin calc-60px">
+      {% if trending_products %}
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular Item in the market</p>
@@ -71,6 +72,7 @@
         {% endfor %}
         </div>
       </div>
+      {% endif %}
     </section>
     <!-- ================ trending product section end ================= -->  
 
