@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {% include 'includes/side-nav.html' %}
+            <div class="col-md-8">
+                <div class="card shadow border-0">
+                    <header class="card-header border-0">
+                        Your Order History
+                    </header>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order #</th>
+                                    <th scope="col">Billing Name</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Order Total</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><a
+                                        href="#">45742</a>
+                                    </th>
+                                    <td>John Doe</td>
+                                    <td>+255 762 262 2627</td>
+                                    <td>$200</td>
+                                    <td>22 October 22</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
