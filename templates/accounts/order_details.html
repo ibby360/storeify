@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow border-0 w-60">
+                    <div class="card-body p-5" id="dash_0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="{% static 'img/logo.png' %}" alt="Invoice logo" >
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled text-right">
+                                    <li><strong>Invoiced To</strong></li>
+                                    <li>John Doe</li>
+                                    <li>South Beach</li>
+                                    <li>City, State</li>
+                                    <li>Country</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-12">
+                                <ul>
+                                    <li><strong>Order</strong> #213414</li>
+                                    <li><strong>Transaction ID</strong> 466181</li>
+                                    <li><strong>Order Date:</strong> 16 October 2021</li>
+                                    <li><strong>Status:</strong> Paid</li>
+                                </ul>
+                                <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Products</th>
+                                                <th class="text-center">Qty</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Rolex Watch
+                                                    <p class="text-muted small">
+                                                        white:
+                                                        23 <br>
+                                                    </p>
+                                                </td>
+                                                <td class="text-center">20</td>
+                                                <td class="text-center">$1000.99 USD</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="2" class="text-right">Sub Total:</th>
+                                                <th class="text-center">$10002221 USD</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2" class="text-right">Tax:</th>
+                                                <th class="text-center">$500 USD</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2" class="text-right">Grand Total:</th>
+                                                <th class="text-center">$10002221 USD</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="invoice-footer">
+                                    <p class="text-center">Thank you for shopping with us!</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
