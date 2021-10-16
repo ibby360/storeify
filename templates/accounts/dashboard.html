@@ -5,34 +5,38 @@
 <section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card shadow" style="width: 18rem;">
+            {% include 'includes/side-nav.html' %}
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <header class="card-header">
+                        <strong class="d-inline-block mr-1">You Logged in as:</strong>
+                        <span>John Doe</span>
+                    </header>
                     <div class="card-body">
-                        <ul class="nav nav-pills flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">My order history</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Transactions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Returns and refunds</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Settings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My selling items</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Received orders</a>
-                            </li>
-                        </ul>
-                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card shadow border-0" style="text-align:center;">
+                                    <div class="card-body">
+                                        <img src="{% static 'img/instagram/ins-6.jpg' %}" alt="User Profile Picture" width="60" height="60" style="border-radius:50%;">
+                                        <p class="mb-2">username.gmail.com</p>
+                                        <p class="mb-0">+255 783 123 9821</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow border-0" style="text-align:center;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Orders</h5>
+                                        <h4>50</h4>
+                                        <a href="#" class="mb-4">View Orders</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
-            <div class="col-md-8">fdakdfla</div>
         </div>
     </div>
     
