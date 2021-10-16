@@ -1,0 +1,23 @@
+<div class="col-md-4 pb-4">
+    <div class="card shadow border-0" style="width: 18rem">
+        <div class="card-body">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item ">
+                    <a class="nav-link {% if '/accounts/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/accounts/my_orders/' == request.path %}active{% endif %}" href="{% url 'orders' %}">My Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="text">Log out</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
