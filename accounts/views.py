@@ -63,7 +63,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('index')
+            return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credentials!')
             return redirect('login')
@@ -90,3 +90,21 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, 'Invalid activation link')
         return redirect('register')
+
+def forgot_password(request):
+    return render(request, 'accounts/forgot_password.html')
+
+
+@login_required(login_url='login')
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
+
+
+@login_required(login_url='login')
+def orders(request):
+    return render(request, 'accounts/orders.html')
+
+
+@login_required(login_url='login')
+def order_detils(request):
+    return render(request, 'accounts/order_details.html')
