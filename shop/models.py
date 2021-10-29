@@ -11,8 +11,8 @@ class Product(models.Model):
     thumbnail = models.ImageField(upload_to='products')
     stock = models.IntegerField()
     is_available = models.BooleanField(default=False)
-    trending_product = models.BooleanField(default=False) #TODO: Create a function to filter products by hit count or search 
-    top_seller = models.BooleanField(default=False) #TODO: Create a function to find top seller products
+    trending_product = models.BooleanField(default=False) #FIXME: Create a function to filter products by hit count or searches
+    top_seller = models.BooleanField(default=False) #FIXME: Create a function to find top seller products
     featured = models.BooleanField(default=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
