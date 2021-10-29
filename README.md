@@ -8,6 +8,12 @@
 ## Status
 In Development 🚧 
 
+## Demo
+Soon 
+
+## Screenshots
+Soon 
+
 ## Requirements
 - Python 3+
 - Pip
