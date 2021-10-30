@@ -10,7 +10,7 @@
 					<h1>Shopping Cart</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
                         </ol>
                     </nav>
@@ -48,6 +48,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex cart-img">
+                                            <a class="d-flex" href="{% url 'cart:remove_cart_item' cart_item.product.id %}" arial-label="Remove item from cart"><i class="fa fa-times text-danger"></i></a>
                                             <img src="{{ cart_item.product.thumbnail.url }}" alt="">
                                         </div>
                                         <div class="media-body">
@@ -75,7 +76,7 @@
     
                             <tr class="bottom_button">
                                 <td>
-                                    <a class="button" href="#">Update Cart</a>
+                                <!-- <a class="button" href="#">Update Cart</a> -->    
                                 </td>
                                 <td>
 
@@ -151,8 +152,8 @@
                                 </td>
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
-                                        <a class="gray_btn" href="#">Continue Shopping</a>
-                                        <a class="primary-btn ml-2" href="#">Proceed to checkout</a>
+                                        <a class="gray_btn" href="{% url 'shop:shop' %}">Continue Shopping</a>
+                                        <a class="primary-btn ml-2" href="{% url 'cart:checkout' %}">Proceed to checkout</a>
                                     </div>
                                 </td>
                             </tr>
