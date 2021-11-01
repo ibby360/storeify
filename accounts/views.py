@@ -90,7 +90,7 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
-
+@unauthenticated_user
 def activate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
