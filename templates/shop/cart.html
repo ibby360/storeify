@@ -48,7 +48,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex cart-img">
-                                            <a class="d-flex" href="{% url 'cart:remove_cart_item' cart_item.product.id %}" arial-label="Remove item from cart"><i class="fa fa-times text-danger"></i></a>
+                                            {% comment %} <a class="d-flex" href="{% url 'cart:remove_cart_item' cart_item.product.id %}" arial-label="Remove item from cart"><i class="fa fa-times text-danger"></i></a> {% endcomment %}
                                             <img src="{{ cart_item.product.thumbnail.url }}" alt="">
                                         </div>
                                         <div class="media-body">
@@ -66,7 +66,7 @@
                                         <button class="increase items-count" type="button"><a href="{% url 'cart:add_cart' cart_item.product.id %}" class="qnty-link"><i class="lnr lnr-chevron-up"></i></a></button>
                                         <button class="reduced items-count" type="button"><a href="{% url 'cart:remove_cart' cart_item.product.id %}" class="qnty-link"><i class="lnr lnr-chevron-down"></i></a></button>
                                     </div>
-                                  {% comment %} <a href="{% url 'cart:remove_cart_item' cart_item.product.id %}" class="btn remove-btn">Remove</a> {% endcomment %}
+                                  <a href="{% url 'cart:remove_cart_item' cart_item.product.id %}" class="btn remove-btn" aria-label="Remove product">Remove</a>
                                 </td>
                                 <td>
                                     <h5>${{ cart_item.total_price }}</h5>
