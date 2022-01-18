@@ -5,6 +5,7 @@ from accounts.models import Account
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from accounts.decorators import unauthenticated_user
+import requests
 
 from cart import views
 
@@ -77,8 +78,17 @@ def login(request):
                         item.save()
             except:
                 pass
+
             auth.login(request, user)
-            return redirect('dashboard')
+            url = request.META.get('HTTP_REFERER')
+            try:
+                query = requests.utils.urlparse(url).query
+                params = dict(x.split('=') for x in query.split('&')) 
+                if 'next' in params:
+                    next_page = params['next']
+                    return redirect(next_page)
+            except:
+                return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credentials!')
             return redirect('login')
