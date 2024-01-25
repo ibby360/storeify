@@ -1,6 +1,6 @@
 asgiref==3.3.4
 beautifulsoup4==4.9.3
-Django==3.2.20
+Django==3.2.23
 django-environ==0.4.5
 django-livereload-server==0.3.2
 Pillow==10.2.0
